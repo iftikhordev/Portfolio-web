@@ -30,11 +30,11 @@ export const CaseStudyDetailModal: React.FC<CaseStudyDetailModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
       <div 
-        className="relative w-full max-w-3xl bg-[#090D1C] border border-slate-800 rounded-3xl shadow-2xl overflow-hidden my-8"
+        className="relative w-full max-w-3xl bg-white dark:bg-[#090D1C] border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden my-8 transition-colors"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Banner with visual styling */}
-        <div className={`h-48 w-full bg-gradient-to-br ${study.gradientTheme} p-6 sm:p-8 flex flex-col justify-between relative border-b border-slate-800`}>
+        <div className={`h-48 w-full bg-gradient-to-br ${study.gradientTheme} p-6 sm:p-8 flex flex-col justify-between relative border-b border-slate-200 dark:border-slate-800`}>
           <div className="flex items-center justify-between relative z-10">
             <span className="px-3 py-1 rounded-xl bg-black/50 backdrop-blur-md text-xs font-mono text-white font-medium border border-white/10">
               {study.categoryLabel}
@@ -72,32 +72,32 @@ export const CaseStudyDetailModal: React.FC<CaseStudyDetailModalProps> = ({
         <div className="p-6 sm:p-8 space-y-6 max-h-[65vh] overflow-y-auto">
           {/* Executive Summary */}
           <div>
-            <h4 className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2 font-semibold">
+            <h4 className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 font-semibold">
               {lang === 'en' ? "Executive Summary" : "Loyiha Haqida"}
             </h4>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
               {study.shortDesc}
             </p>
           </div>
 
           {/* Problem vs Solution Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-4 rounded-2xl bg-[#060814] border border-slate-800/80 space-y-2">
-              <div className="flex items-center gap-2 text-rose-400 text-xs font-bold font-mono">
+            <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-[#060814] border border-rose-200 dark:border-slate-800/80 space-y-2">
+              <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 text-xs font-bold font-mono">
                 <AlertCircle className="w-4 h-4" />
                 <span>{lang === 'en' ? "The Challenge" : "Mavjud Muammo"}</span>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 {study.challenge}
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#060814] border border-slate-800/80 space-y-2">
-              <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold font-mono">
+            <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-[#060814] border border-emerald-200 dark:border-slate-800/80 space-y-2">
+              <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-xs font-bold font-mono">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>{lang === 'en' ? "Our Solution" : "Bizning Yechim"}</span>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 {study.solution}
               </p>
             </div>
@@ -105,14 +105,14 @@ export const CaseStudyDetailModal: React.FC<CaseStudyDetailModalProps> = ({
 
           {/* Technologies Used */}
           <div>
-            <h4 className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2 font-semibold">
+            <h4 className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 font-semibold">
               {lang === 'en' ? "Production Stack" : "Qo'llanilgan Texnologiyalar"}
             </h4>
             <div className="flex flex-wrap gap-1.5">
               {study.tags.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="text-xs font-mono px-3 py-1 rounded-lg bg-[#060814] text-amber-300 border border-slate-800"
+                  className="text-xs font-mono px-3 py-1 rounded-lg bg-slate-100 dark:bg-[#060814] text-amber-700 dark:text-amber-300 border border-slate-300 dark:border-slate-800"
                 >
                   {tag}
                 </span>
@@ -121,7 +121,7 @@ export const CaseStudyDetailModal: React.FC<CaseStudyDetailModalProps> = ({
           </div>
 
           {/* Action Footer inside Modal */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-800">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
             <div className="flex items-center gap-3">
               {study.githubUrl && (
                 <a

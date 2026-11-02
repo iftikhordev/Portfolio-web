@@ -37,16 +37,16 @@ export const MockupFooter: React.FC<MockupFooterProps> = ({ lang }) => {
   ];
 
   return (
-    <footer className="bg-[#03050C] text-white border-t border-slate-900 pt-16 pb-12">
+    <footer className="bg-slate-100 dark:bg-[#03050C] text-slate-800 dark:text-white border-t border-slate-200 dark:border-slate-900 pt-16 pb-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Grid: Brand, Nav links, Newsletter */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-900 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-200 dark:border-slate-900 items-start">
           
           {/* Brand Info */}
           <div className="md:col-span-4 space-y-3">
             <a href="#home" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-xl bg-[#090D1A] border border-amber-400/40 p-1 flex items-center justify-center shadow-lg group-hover:border-amber-400 transition-colors">
+              <div className="w-11 h-11 rounded-xl bg-white dark:bg-[#090D1A] border border-slate-200 dark:border-amber-400/40 p-1 flex items-center justify-center shadow-md dark:shadow-lg group-hover:border-amber-400 transition-colors">
                 <img 
                   src="/assets/aistudio/_________-1_322dc622.png" 
                   alt="IT Logo" 
@@ -55,20 +55,20 @@ export const MockupFooter: React.FC<MockupFooterProps> = ({ lang }) => {
               </div>
               <div className="flex flex-col">
                 <div className="flex items-baseline gap-1">
-                  <span className="font-extrabold text-base tracking-tight text-white font-sans">
+                  <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white font-sans">
                     IT
                   </span>
-                  <span className="font-light text-base tracking-tight text-amber-400">
+                  <span className="font-light text-base tracking-tight text-amber-500 dark:text-amber-400">
                     Digital
                   </span>
                 </div>
-                <span className="text-[10px] text-slate-400 font-mono -mt-0.5">
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono -mt-0.5">
                   Iftikhor Turamuradov
                 </span>
               </div>
             </a>
 
-            <p className="text-xs font-mono text-slate-400 tracking-wide">
+            <p className="text-xs font-mono text-slate-600 dark:text-slate-400 tracking-wide">
               Iftikhor Turamuradov — Lead Software Engineer
             </p>
             <p className="text-[11px] text-slate-500">
@@ -76,21 +76,21 @@ export const MockupFooter: React.FC<MockupFooterProps> = ({ lang }) => {
                 href="https://maps.app.goo.gl/D5MZai4GWfDGtVEMA" 
                 target="_blank" 
                 rel="noreferrer"
-                className="hover:text-amber-400 transition-colors underline decoration-slate-700 underline-offset-2"
+                className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors underline decoration-slate-400 dark:decoration-slate-700 underline-offset-2"
               >
                 Samarkand, Uzbekistan
-              </a> • <a href="mailto:iftikhordev@gmail.com" className="hover:text-amber-400 transition-colors">iftikhordev@gmail.com</a>
+              </a> • <a href="mailto:iftikhordev@gmail.com" className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">iftikhordev@gmail.com</a>
             </p>
           </div>
 
           {/* Nav Links in Center */}
-          <div className="md:col-span-4 flex flex-wrap items-center gap-x-6 gap-y-2.5 text-xs font-medium text-slate-400">
+          <div className="md:col-span-4 flex flex-wrap items-center gap-x-6 gap-y-2.5 text-xs font-medium text-slate-600 dark:text-slate-400">
             {navLinks.map((link, idx) => (
               <a
                 key={idx}
                 href={link.href}
                 onClick={() => soundFx.playClick()}
-                className="hover:text-amber-400 transition-colors"
+                className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors"
               >
                 {link.label}
               </a>
@@ -99,10 +99,10 @@ export const MockupFooter: React.FC<MockupFooterProps> = ({ lang }) => {
 
           {/* Newsletter on Right */}
           <div className="md:col-span-4 space-y-2.5">
-            <h4 className="text-xs font-bold text-white tracking-wide">
+            <h4 className="text-xs font-bold text-slate-900 dark:text-white tracking-wide">
               {lang === 'en' ? "Join Our Newsletter" : "Yangiliklarimizga Obuna Bo'ling"}
             </h4>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-600 dark:text-slate-400">
               {lang === 'en' ? "Get the latest updates and insights directly." : "So'nggi tendentsiyalar va foydali ma'lumotlarni oling."}
             </p>
 
@@ -114,7 +114,7 @@ export const MockupFooter: React.FC<MockupFooterProps> = ({ lang }) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={lang === 'en' ? "Your email address" : "Email manzilingiz"}
-                className="w-full pl-4 pr-12 py-2.5 bg-[#0A0E1F] border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors font-mono"
+                className="w-full pl-4 pr-12 py-2.5 bg-white dark:bg-[#0A0E1F] border border-slate-300 dark:border-slate-800 rounded-xl text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors font-mono shadow-sm"
               />
               <button
                 type="submit"

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { soundFx } from '../../services/soundFx';
+import { ambientMusic } from '../../services/ambientMusic';
 import { 
   Sun, 
   Moon, 
@@ -8,7 +9,8 @@ import {
   ArrowRight, 
   Menu, 
   X,
-  Languages
+  Languages,
+  Music
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -30,7 +32,15 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMuted, setIsMuted] = useState(soundFx.getMuted());
+  const [isMusicPlaying, setIsMusicPlaying] = useState(ambientMusic.getIsPlaying());
   const [activeSection, setActiveSection] = useState('contact');
+
+  useEffect(() => {
+    const unsub = ambientMusic.subscribe((playing) => {
+      setIsMusicPlaying(playing);
+    });
+    return unsub;
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,8 +79,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   const handleAudioToggle = () => {
-    const next = soundFx.toggleMute();
-    setIsMuted(next);
+    soundFx.playClick();
+    const nextMusic = ambientMusic.toggle();
+    setIsMusicPlaying(nextMusic);
   };
 
   const scrollTo = (href: string) => {
@@ -182,23 +193,37 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* Audio Toggle */}
               <button
                 onClick={handleAudioToggle}
-                className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer hidden sm:flex"
-                title={isMuted ? "Ovozni yoqish" : "Ovozni o'chirish"}
+                className="px-2.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer hidden sm:flex items-center gap-1.5 shadow-sm"
+                title={isMusicPlaying ? (lang === 'en' ? "Pause calm ambient music" : "Sokin musiqani to'xtatish") : (lang === 'en' ? "Play calm ambient music" : "Sokin musiqani yoqish")}
               >
-                {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-amber-500" />}
+                {isMusicPlaying ? (
+                  <>
+                    <Volume2 className="w-4 h-4 text-amber-500 animate-pulse" />
+                    <span className="flex items-end gap-0.5 h-3">
+                      <span className="w-0.5 bg-amber-400 rounded-full animate-[pulse_0.8s_ease-in-out_infinite] h-2" />
+                      <span className="w-0.5 bg-amber-400 rounded-full animate-[pulse_1.1s_ease-in-out_infinite] h-3" />
+                      <span className="w-0.5 bg-amber-400 rounded-full animate-[pulse_0.6s_ease-in-out_infinite] h-1.5" />
+                    </span>
+                  </>
+                ) : (
+                  <VolumeX className="w-4 h-4 text-slate-400" />
+                )}
               </button>
 
-              {/* Available Developer Status Pill */}
-              <div className="hidden xl:flex items-center gap-2 pl-2 pr-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-xs">
+              {/* Online Developer Status Pill (Replaces Available with Online) */}
+              <div className="hidden xl:flex items-center gap-2 pl-2 pr-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-xs shadow-sm">
                 <div className="relative">
                   <img 
                     src="/assets/aistudio/Midnight_Developer_Workspace_de10e08d.png" 
                     alt="Iftikhor Turamuradov" 
                     className="w-6 h-6 rounded-full object-cover ring-1 ring-amber-400" 
                   />
-                  <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full ring-1 ring-white dark:ring-slate-950" />
+                  <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full ring-2 ring-white dark:ring-slate-950 animate-pulse" />
                 </div>
-                <span className="font-mono text-[11px] text-slate-700 dark:text-slate-300 font-medium">Available</span>
+                <div className="flex items-center gap-1 font-mono text-[11px] font-bold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+                  <span className="text-emerald-600 dark:text-emerald-400 tracking-wide uppercase text-[10px]">Online</span>
+                </div>
               </div>
 
               {/* Primary "Let's Talk →" Button (matching exact golden pill in mockup) */}
@@ -250,8 +275,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                   />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-bold text-slate-900 dark:text-white truncate">
-                    Iftikhor Turamuradov
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-bold text-slate-900 dark:text-white truncate">
+                      Iftikhor Turamuradov
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-wider flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Online
+                    </span>
                   </div>
                   <div className="text-xs text-amber-500 dark:text-amber-400 font-mono">
                     IT Digital • Lead Engineer

@@ -52,16 +52,16 @@ export const MockupFaqSection: React.FC<MockupFaqSectionProps> = ({
   };
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-[#050710] text-white relative overflow-hidden border-t border-slate-900">
+    <section id="faq" className="py-20 sm:py-28 bg-slate-50 dark:bg-[#050710] text-slate-900 dark:text-white relative overflow-hidden border-t border-slate-200 dark:border-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Unified Card Container matching the mockup */}
-        <div className="bg-[#090D1A]/95 border border-slate-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl">
+        <div className="bg-white dark:bg-[#090D1A]/95 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl dark:shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
             {/* Left Part: Branded Coffee Mug on Desk Photo */}
             <div className="lg:col-span-3 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-slate-800 h-[260px] lg:h-[340px] bg-slate-950 group">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 h-[260px] lg:h-[340px] bg-slate-100 dark:bg-slate-950 group shadow-sm">
                 <img
                   src="/src/assets/images/ceramic_mug_desk_1793635730017.jpg"
                   alt="Ceramic coffee mug on wooden desk"
@@ -81,27 +81,27 @@ export const MockupFaqSection: React.FC<MockupFaqSectionProps> = ({
             {/* Middle Part: Headline & Handwritten Note */}
             <div className="lg:col-span-4 space-y-4 text-left">
               {/* Tag: • FAQ */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-400" />
-                <span className="text-slate-300 font-semibold uppercase text-[11px]">FAQ</span>
+                <span className="text-slate-700 dark:text-slate-300 font-semibold uppercase text-[11px]">FAQ</span>
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug">
                 {lang === 'en' ? (
                   <>
                     Common Questions <br />
-                    <span className="font-serif-italic text-amber-400 font-normal">Answered</span>
+                    <span className="font-serif-italic text-amber-500 dark:text-amber-400 font-normal">Answered</span>
                   </>
                 ) : (
                   <>
                     Ko'p Beriladigan <br />
-                    <span className="font-serif-italic text-amber-400 font-normal">Savollarga Javoblar</span>
+                    <span className="font-serif-italic text-amber-500 dark:text-amber-400 font-normal">Savollarga Javoblar</span>
                   </>
                 )}
               </h3>
 
-              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
                 {lang === 'en'
                   ? "Got questions? We've got answers. Check out our FAQs or reach out if you need more help."
                   : "Savollaringiz bormi? Bizda javoblar tayyor. Quyidagi savollarni ko'ring yoki qo'shimcha ma'lumot uchun bizga yozing."}
@@ -114,12 +114,12 @@ export const MockupFaqSection: React.FC<MockupFaqSectionProps> = ({
                     soundFx.playClick();
                     onContactClick();
                   }}
-                  className="flex items-center gap-1 font-handwriting text-amber-300 text-xl font-bold -rotate-3 hover:text-amber-200 transition-colors cursor-pointer group text-left"
+                  className="flex items-center gap-1 font-handwriting text-amber-500 dark:text-amber-300 text-xl font-bold -rotate-3 hover:text-amber-600 dark:hover:text-amber-200 transition-colors cursor-pointer group text-left"
                 >
                   <span>{lang === 'en' ? "Still have questions? Contact us!" : "Yana savollaringiz bormi? Yozing!"}</span>
-                  <span className="text-amber-400 group-hover:translate-x-1 transition-transform">→</span>
+                  <span className="text-amber-500 dark:text-amber-400 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
-                <svg className="w-14 h-8 text-amber-300 ml-16 -mt-1" viewBox="0 0 80 50" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <svg className="w-14 h-8 text-amber-500 dark:text-amber-300 ml-16 -mt-1" viewBox="0 0 80 50" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                   <path d="M 10,10 Q 40,40 65,25" />
                   <path d="M 55,20 L 65,25 L 60,35" />
                 </svg>
@@ -135,8 +135,8 @@ export const MockupFaqSection: React.FC<MockupFaqSectionProps> = ({
                     key={index}
                     className={`rounded-2xl border transition-all overflow-hidden ${
                       isOpen
-                        ? 'bg-[#0D1326] border-amber-400/50 shadow-md'
-                        : 'bg-[#070A14] border-slate-800 hover:border-slate-700'
+                        ? 'bg-amber-50/40 dark:bg-[#0D1326] border-amber-400/60 shadow-sm'
+                        : 'bg-slate-50 dark:bg-[#070A14] border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                     }`}
                   >
                     <button
@@ -144,19 +144,19 @@ export const MockupFaqSection: React.FC<MockupFaqSectionProps> = ({
                       className="w-full px-5 py-4 flex items-center justify-between text-left cursor-pointer gap-3"
                     >
                       <span className={`text-xs sm:text-sm font-semibold transition-colors ${
-                        isOpen ? 'text-amber-400' : 'text-slate-200 hover:text-white'
+                        isOpen ? 'text-amber-600 dark:text-amber-400' : 'text-slate-800 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white'
                       }`}>
                         {faq.q}
                       </span>
                       <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors ${
-                        isOpen ? 'bg-amber-400 text-slate-950 font-bold' : 'bg-slate-900 text-slate-400 border border-slate-800'
+                        isOpen ? 'bg-amber-400 text-slate-950 font-bold' : 'bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800 shadow-sm'
                       }`}>
                         {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                       </div>
                     </button>
 
                     {isOpen && (
-                      <div className="px-5 pb-4 text-xs text-slate-400 leading-relaxed border-t border-slate-800/80 pt-3">
+                      <div className="px-5 pb-4 text-xs text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-slate-800/80 pt-3">
                         {faq.a}
                       </div>
                     )}

@@ -12,6 +12,7 @@ import { MockupFooter } from './components/sections/MockupFooter';
 import { VideoStoryModal } from './components/modals/VideoStoryModal';
 import { GoogleMapModal } from './components/modals/GoogleMapModal';
 import { CaseStudyDetailModal } from './components/modals/CaseStudyDetailModal';
+import { AmbientMusicPlayer } from './components/layout/AmbientMusicPlayer';
 import { soundFx } from './services/soundFx';
 
 export default function App() {
@@ -79,7 +80,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050710] text-slate-100 selection:bg-amber-400 selection:text-slate-950 transition-colors duration-300 font-['Plus_Jakarta_Sans',sans-serif]">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050710] text-slate-900 dark:text-slate-100 selection:bg-amber-400 selection:text-slate-950 transition-colors duration-300 font-['Plus_Jakarta_Sans',sans-serif]">
       {/* Top Navigation Bar with exact AS Digital branding */}
       <Navbar
         isDarkMode={isDarkMode}
@@ -143,6 +144,9 @@ export default function App() {
 
       {/* Section 9: Footer */}
       <MockupFooter lang={lang} />
+
+      {/* Floating Calm Ambient Music Player */}
+      <AmbientMusicPlayer lang={lang} />
 
       {/* Interactive Modals */}
       {isVideoModalOpen && (

@@ -65,10 +65,10 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
   };
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 bg-[#050710] text-white overflow-hidden">
+    <section id="contact" className="relative py-24 sm:py-32 bg-slate-50 dark:bg-[#050710] text-slate-900 dark:text-white overflow-hidden transition-colors duration-300">
       {/* Background glow and curved ribbon wave */}
-      <div className="absolute top-1/2 left-0 w-[550px] h-[550px] bg-indigo-900/15 blur-[160px] pointer-events-none rounded-full" />
-      <div className="absolute -bottom-20 right-0 w-[600px] h-[600px] bg-blue-900/15 blur-[170px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-0 w-[550px] h-[550px] bg-indigo-500/10 dark:bg-indigo-900/15 blur-[160px] pointer-events-none rounded-full" />
+      <div className="absolute -bottom-20 right-0 w-[600px] h-[600px] bg-blue-500/10 dark:bg-blue-900/15 blur-[170px] pointer-events-none rounded-full" />
 
       {/* Decorative Folded Origami Yellow Paper Plane */}
       <div className="absolute left-6 top-1/3 z-10 hidden md:block select-none pointer-events-none">
@@ -86,29 +86,29 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
           <div className="lg:col-span-5 space-y-8">
             <div>
               {/* Tag: • OUR CONTACT */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-mono mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-xs font-mono mb-4 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-400" />
-                <span className="text-slate-300 font-semibold tracking-wider uppercase text-[11px]">
+                <span className="text-slate-700 dark:text-slate-300 font-semibold tracking-wider uppercase text-[11px]">
                   {lang === 'en' ? 'OUR CONTACT' : 'BIZ BILAN ALOQA'}
                 </span>
               </div>
 
               {/* Title with italic serif accent */}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
                 {lang === 'en' ? (
                   <>
                     Get In Touch <br />
-                    <span className="font-serif-italic text-amber-400 font-normal">With Us</span>
+                    <span className="font-serif-italic text-amber-500 dark:text-amber-400 font-normal">With Us</span>
                   </>
                 ) : (
                   <>
                     Biz Bilan <br />
-                    <span className="font-serif-italic text-amber-400 font-normal">Bog'laning</span>
+                    <span className="font-serif-italic text-amber-500 dark:text-amber-400 font-normal">Bog'laning</span>
                   </>
                 )}
               </h2>
 
-              <p className="text-sm text-slate-400 leading-relaxed mt-4 max-w-md">
+              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-4 max-w-md">
                 {lang === 'en'
                   ? "We're always here to help, whether you have a question, a proposal, or just want to say hello."
                   : "Biz har doim yordamga tayyormiz, savolingiz bormi, taklifingiz yoki shunchaki salomlashmoqchimisiz."}
@@ -119,14 +119,14 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
             <div className="space-y-6 pt-2">
               {/* Email Us */}
               <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 shrink-0 group-hover:border-amber-400/60 transition-colors shadow-md">
+                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-amber-500 dark:text-amber-400 shrink-0 group-hover:border-amber-400/60 transition-colors shadow-sm dark:shadow-md">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                     {lang === 'en' ? 'Email Us' : 'Elektron Pochta'}
                   </h4>
-                  <a href="mailto:iftikhordev@gmail.com" className="text-sm font-semibold text-white hover:text-amber-400 transition-colors block mt-0.5 font-mono">
+                  <a href="mailto:iftikhordev@gmail.com" className="text-sm font-semibold text-slate-900 dark:text-white hover:text-amber-500 dark:hover:text-amber-400 transition-colors block mt-0.5 font-mono">
                     iftikhordev@gmail.com
                   </a>
                   <p className="text-xs text-slate-500 mt-0.5">
@@ -137,14 +137,14 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
 
               {/* Call Us */}
               <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 shrink-0 group-hover:border-amber-400/60 transition-colors shadow-md">
+                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-amber-500 dark:text-amber-400 shrink-0 group-hover:border-amber-400/60 transition-colors shadow-sm dark:shadow-md">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                     {lang === 'en' ? 'Call Us' : 'Telefon'}
                   </h4>
-                  <a href="tel:+998939063344" className="text-sm font-semibold text-white hover:text-amber-400 transition-colors block mt-0.5 font-mono">
+                  <a href="tel:+998939063344" className="text-sm font-semibold text-slate-900 dark:text-white hover:text-amber-500 dark:hover:text-amber-400 transition-colors block mt-0.5 font-mono">
                     +998 93 906 33 44
                   </a>
                   <p className="text-xs text-slate-500 mt-0.5">
@@ -161,15 +161,15 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                 onClick={() => soundFx.playClick()}
                 className="flex items-start gap-4 group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 shrink-0 group-hover:border-amber-400/60 transition-colors shadow-md">
+                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-amber-500 dark:text-amber-400 shrink-0 group-hover:border-amber-400/60 transition-colors shadow-sm dark:shadow-md">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider group-hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                  <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors flex items-center gap-1.5">
                     <span>{lang === 'en' ? 'Visit Us' : 'Manzilimiz'}</span>
-                    <ExternalLink className="w-3 h-3 text-slate-500 group-hover:text-amber-400 transition-colors" />
+                    <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-amber-500 transition-colors" />
                   </h4>
-                  <p className="text-sm font-semibold text-white mt-0.5 leading-snug group-hover:text-amber-300 transition-colors">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white mt-0.5 leading-snug group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors">
                     {lang === 'en' ? (
                       <>
                         Samarkand region, Jomboy district, <br />
@@ -187,20 +187,20 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
 
               {/* Follow Us */}
               <div className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 shrink-0 group-hover:border-amber-400/60 transition-colors shadow-md">
+                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-amber-500 dark:text-amber-400 shrink-0 group-hover:border-amber-400/60 transition-colors shadow-sm dark:shadow-md">
                   <Send className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                     {lang === 'en' ? 'Follow & Chat' : 'Ijtimoiy Tarmoqlar'}
                   </h4>
-                  <div className="flex items-center gap-3.5 mt-2 text-slate-300">
+                  <div className="flex items-center gap-3.5 mt-2 text-slate-600 dark:text-slate-300">
                     {/* Telegram */}
                     <a 
                       href="https://t.me/iftikhordev" 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-400 flex items-center justify-center hover:text-amber-400 hover:scale-110 transition-all" 
+                      className="w-8 h-8 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 flex items-center justify-center hover:text-amber-500 hover:scale-110 transition-all shadow-sm" 
                       title="Telegram: @iftikhordev"
                     >
                       <Send className="w-4 h-4" />
@@ -210,7 +210,7 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                       href="https://instagram.com/iftikhordev" 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-400 flex items-center justify-center hover:text-amber-400 hover:scale-110 transition-all" 
+                      className="w-8 h-8 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 flex items-center justify-center hover:text-amber-500 hover:scale-110 transition-all shadow-sm" 
                       title="Instagram: @iftikhordev"
                     >
                       <Instagram className="w-4 h-4" />
@@ -220,7 +220,7 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                       href="https://linkedin.com/in/iftikhorturamuradov" 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-400 flex items-center justify-center hover:text-amber-400 hover:scale-110 transition-all" 
+                      className="w-8 h-8 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 flex items-center justify-center hover:text-amber-500 hover:scale-110 transition-all shadow-sm" 
                       title="LinkedIn: iftikhorturamuradov"
                     >
                       <Linkedin className="w-4 h-4" />
@@ -230,7 +230,7 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                       href="https://x.com/iftikhordev" 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-400 flex items-center justify-center hover:text-amber-400 hover:scale-110 transition-all" 
+                      className="w-8 h-8 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 flex items-center justify-center hover:text-amber-500 hover:scale-110 transition-all shadow-sm" 
                       title="X: @iftikhordev"
                     >
                       <Twitter className="w-4 h-4" />
@@ -240,7 +240,7 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                       href="https://youtube.com/@iftikhorvlogs" 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-400 flex items-center justify-center hover:text-amber-400 hover:scale-110 transition-all" 
+                      className="w-8 h-8 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 flex items-center justify-center hover:text-amber-500 hover:scale-110 transition-all shadow-sm" 
                       title="YouTube: @iftikhorvlogs"
                     >
                       <Youtube className="w-4 h-4" />
@@ -255,10 +255,10 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
 
             {/* Handwritten note: "Let's Connect!" with curvy arrow */}
             <div className="pt-2 pl-4">
-              <div className="font-handwriting text-amber-300 text-3xl font-bold -rotate-6 inline-block">
+              <div className="font-handwriting text-amber-500 dark:text-amber-300 text-3xl font-bold -rotate-6 inline-block">
                 Let's Connect!
               </div>
-              <svg className="w-12 h-8 text-amber-300 ml-14 -mt-1" viewBox="0 0 80 50" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+              <svg className="w-12 h-8 text-amber-500 dark:text-amber-300 ml-14 -mt-1" viewBox="0 0 80 50" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                 <path d="M 10,10 Q 40,40 65,25" />
                 <path d="M 55,20 L 65,25 L 60,35" />
               </svg>
@@ -267,9 +267,9 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
 
           {/* Right Column: Interactive "Tell Us About Your Project" Form */}
           <div className="lg:col-span-7">
-            <div className="relative bg-[#090D1C]/90 border border-slate-800/90 hover:border-slate-700/80 rounded-3xl p-7 sm:p-9 shadow-2xl backdrop-blur-xl">
+            <div className="relative bg-white dark:bg-[#090D1C]/90 border border-slate-200 dark:border-slate-800/90 hover:border-slate-300 dark:hover:border-slate-700/80 rounded-3xl p-7 sm:p-9 shadow-xl dark:shadow-2xl backdrop-blur-xl">
               {/* Subtle top-right handwritten squiggle */}
-              <div className="absolute top-6 right-6 text-amber-300 pointer-events-none hidden sm:block">
+              <div className="absolute top-6 right-6 text-amber-500 dark:text-amber-300 pointer-events-none hidden sm:block">
                 <svg className="w-14 h-8" viewBox="0 0 100 50" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                   <path d="M 10,25 Q 50,5 90,25" />
                 </svg>
@@ -277,26 +277,26 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
 
               {/* Card Header */}
               <div className="mb-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono mb-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono mb-3 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-amber-400" />
-                  <span className="text-slate-300 font-semibold uppercase text-[11px]">
+                  <span className="text-slate-700 dark:text-slate-300 font-semibold uppercase text-[11px]">
                     {lang === 'en' ? 'Send a Message' : 'Xabar Qoldirish'}
                   </span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   {lang === 'en' ? (
                     <>
-                      Tell Us About <span className="font-serif-italic text-amber-400 font-normal">Your Project</span>
+                      Tell Us About <span className="font-serif-italic text-amber-500 dark:text-amber-400 font-normal">Your Project</span>
                     </>
                   ) : (
                     <>
-                      Loyihangiz Haqida <span className="font-serif-italic text-amber-400 font-normal">Bizga Ayting</span>
+                      Loyihangiz Haqida <span className="font-serif-italic text-amber-500 dark:text-amber-400 font-normal">Bizga Ayting</span>
                     </>
                   )}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-400 mt-2">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2">
                   {lang === 'en'
                     ? "Fill out the form below and we'll get back to you with the right solution for your needs."
                     : "Quyidagi formani to'ldiring va biz sizning ehtiyojlaringizga mos yechim bilan tez orada aloqaga chiqamiz."}
@@ -306,20 +306,20 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
               {/* Form Content */}
               {isSubmitted ? (
                 <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
-                  <div className="w-16 h-16 rounded-full bg-amber-400/20 text-amber-400 border border-amber-400/40 flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-amber-400/20 text-amber-500 dark:text-amber-400 border border-amber-400/40 flex items-center justify-center mx-auto">
                     <CheckCircle className="w-8 h-8" />
                   </div>
-                  <h4 className="text-2xl font-bold text-white">
+                  <h4 className="text-2xl font-bold text-slate-900 dark:text-white">
                     {lang === 'en' ? "Thank You! We've Received Your Message." : "Rahmat! Xabaringiz Qabul Qilindi."}
                   </h4>
-                  <p className="text-sm text-slate-400 max-w-md mx-auto">
+                  <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
                     {lang === 'en'
                       ? "Our team is reviewing your project details and will get back to you within 24 hours."
                       : "Mutaxassislarimiz loyiha tafsilotlarini ko'rib chiqib, 24 soat ichida siz bilan bog'lanishadi."}
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="px-6 py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white transition-colors cursor-pointer"
+                    className="px-6 py-2.5 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-xs font-semibold text-white transition-colors cursor-pointer shadow-md"
                   >
                     {lang === 'en' ? "Send Another Message" : "Yana Xabar Jo'natish"}
                   </button>
@@ -329,7 +329,7 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                   {/* Row 1: Name & Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                         {lang === 'en' ? 'Your Name *' : 'Ismingiz *'}
                       </label>
                       <input
@@ -338,12 +338,12 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder={lang === 'en' ? 'Enter your name' : 'Ismingizni kiriting'}
-                        className="w-full px-4 py-3 bg-[#0D1326] border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors"
+                        className="w-full px-4 py-3 bg-slate-50 dark:bg-[#0D1326] border border-slate-200 dark:border-slate-800 rounded-xl text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors shadow-sm"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                         {lang === 'en' ? 'Email Address *' : 'Elektron Pochta *'}
                       </label>
                       <input
@@ -352,7 +352,7 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="you@company.com"
-                        className="w-full px-4 py-3 bg-[#0D1326] border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors"
+                        className="w-full px-4 py-3 bg-slate-50 dark:bg-[#0D1326] border border-slate-200 dark:border-slate-800 rounded-xl text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors shadow-sm"
                       />
                     </div>
                   </div>
@@ -360,14 +360,14 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                   {/* Row 2: Phone Number & Service */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                         {lang === 'en' ? 'Phone Number *' : 'Telefon Raqam *'}
                       </label>
                       <div className="flex gap-2">
                         <select
                           value={formData.phoneCode}
                           onChange={(e) => setFormData({ ...formData, phoneCode: e.target.value })}
-                          className="px-2.5 py-3 bg-[#0D1326] border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
+                          className="px-2.5 py-3 bg-slate-50 dark:bg-[#0D1326] border border-slate-200 dark:border-slate-800 rounded-xl text-xs text-slate-900 dark:text-white focus:outline-none focus:border-amber-400 shadow-sm"
                         >
                           <option value="+91">+91 (IN)</option>
                           <option value="+998">+998 (UZ)</option>
@@ -380,19 +380,19 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                           value={formData.phoneNumber}
                           onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                           placeholder="98765 43210"
-                          className="flex-1 px-4 py-3 bg-[#0D1326] border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors font-mono"
+                          className="flex-1 px-4 py-3 bg-slate-50 dark:bg-[#0D1326] border border-slate-200 dark:border-slate-800 rounded-xl text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors font-mono shadow-sm"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                         {lang === 'en' ? 'Service Interested In' : 'Qiziqqan Xizmatingiz'}
                       </label>
                       <select
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className="w-full px-4 py-3 bg-[#0D1326] border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-amber-400"
+                        className="w-full px-4 py-3 bg-slate-50 dark:bg-[#0D1326] border border-slate-200 dark:border-slate-800 rounded-xl text-sm text-slate-900 dark:text-white focus:outline-none focus:border-amber-400 shadow-sm"
                       >
                         {![
                           "Web Development",
@@ -414,7 +414,7 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
 
                   {/* Row 3: Your Message */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                       {lang === 'en' ? 'Your Message *' : 'Xabaringiz *'}
                     </label>
                     <textarea
@@ -423,7 +423,7 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder={lang === 'en' ? 'Tell us about your project, goals or any specific requirements...' : 'Loyiha maqsadi, talablar yoki muddati haqida yozing...'}
-                      className="w-full px-4 py-3 bg-[#0D1326] border border-slate-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-slate-50 dark:bg-[#0D1326] border border-slate-200 dark:border-slate-800 rounded-xl text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors resize-none shadow-sm"
                     />
                   </div>
 
@@ -444,8 +444,8 @@ export const MockupContactSection: React.FC<MockupContactSectionProps> = ({ lang
                       )}
                     </button>
 
-                    <div className="flex items-center gap-1.5 text-xs text-slate-400 font-medium">
-                      <Lock className="w-3.5 h-3.5 text-slate-500" />
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
+                      <Lock className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                       <span>{lang === 'en' ? "Your information is safe with us." : "Ma'lumotlaringiz to'liq xavfsiz."}</span>
                     </div>
                   </div>

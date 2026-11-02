@@ -9,15 +9,15 @@ interface GoogleMapModalProps {
 
 export const GoogleMapModal: React.FC<GoogleMapModalProps> = ({ onClose, lang }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-in fade-in duration-200">
       <div 
-        className="relative w-full max-w-3xl bg-[#090D1C] border border-slate-800 rounded-3xl shadow-2xl overflow-hidden my-8"
+        className="relative w-full max-w-3xl bg-white dark:bg-[#090D1C] border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden my-8 transition-colors"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="p-4 px-6 bg-slate-950/90 border-b border-slate-800 flex items-center justify-between">
+        <div className="p-4 px-6 bg-slate-50 dark:bg-slate-950/90 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-slate-900 border border-amber-400/50 p-1 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-white dark:bg-slate-900 border border-amber-500/50 dark:border-amber-400/50 p-1 flex items-center justify-center shadow-sm">
               <img 
                 src="/assets/aistudio/_________-1_322dc622.png" 
                 alt="IT Logo" 
@@ -25,8 +25,8 @@ export const GoogleMapModal: React.FC<GoogleMapModalProps> = ({ onClose, lang })
               />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-white">Iftikhor Turamuradov — Studio HQ</h3>
-              <p className="text-[11px] text-slate-400">Samarkand region, Jomboy district, Tut quarter, Uzbekistan</p>
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">Iftikhor Turamuradov — Studio HQ</h3>
+              <p className="text-[11px] text-slate-600 dark:text-slate-400">Samarkand region, Jomboy district, Tut quarter, Uzbekistan</p>
             </div>
           </div>
 
@@ -35,7 +35,7 @@ export const GoogleMapModal: React.FC<GoogleMapModalProps> = ({ onClose, lang })
               soundFx.playClick();
               onClose();
             }}
-            className="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition-colors cursor-pointer"
+            className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -73,10 +73,10 @@ export const GoogleMapModal: React.FC<GoogleMapModalProps> = ({ onClose, lang })
         </div>
 
         {/* Action Bar */}
-        <div className="p-5 bg-slate-950 flex flex-wrap items-center justify-between gap-4 text-xs">
+        <div className="p-5 bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4 text-xs transition-colors">
           <div className="flex items-center gap-3">
-            <span className="text-slate-400 flex items-center gap-1 font-mono">
-              <Navigation className="w-3.5 h-3.5 text-amber-400" />
+            <span className="text-slate-600 dark:text-slate-400 flex items-center gap-1 font-mono">
+              <Navigation className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" />
               Samarkand: 39.7547° N, 67.0982° E
             </span>
           </div>
@@ -93,7 +93,7 @@ export const GoogleMapModal: React.FC<GoogleMapModalProps> = ({ onClose, lang })
             </a>
             <button
               onClick={onClose}
-              className="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white transition-colors"
+              className="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
             >
               {lang === 'en' ? "Close" : "Yopish"}
             </button>

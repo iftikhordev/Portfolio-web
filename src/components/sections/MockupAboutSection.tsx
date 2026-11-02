@@ -81,9 +81,9 @@ export const MockupAboutSection: React.FC<MockupAboutSectionProps> = ({
   };
 
   return (
-    <section id="about" className="py-24 sm:py-32 bg-[#060814] text-white relative overflow-hidden border-t border-slate-900">
+    <section id="about" className="py-24 sm:py-32 bg-white dark:bg-[#060814] text-slate-900 dark:text-white relative overflow-hidden border-t border-slate-200 dark:border-slate-900 transition-colors duration-300">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-indigo-900/15 blur-[160px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-900/15 blur-[160px] pointer-events-none rounded-full" />
       <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-amber-500/10 blur-[150px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -91,28 +91,28 @@ export const MockupAboutSection: React.FC<MockupAboutSectionProps> = ({
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           {/* Tag: • ABOUT US */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-mono mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-xs font-mono mb-4 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-amber-400" />
-            <span className="text-slate-300 font-semibold tracking-wider uppercase text-[11px]">
+            <span className="text-slate-700 dark:text-slate-300 font-semibold tracking-wider uppercase text-[11px]">
               {lang === 'en' ? 'ABOUT US' : 'BIZ HAQIMIZDA'}
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
             {lang === 'en' ? (
               <>
                 We Are A Creative Digital Agency <br />
-                Driven By <span className="font-serif-italic text-amber-400 font-normal">Passion & Precision</span>
+                Driven By <span className="font-serif-italic text-amber-500 dark:text-amber-400 font-normal">Passion & Precision</span>
               </>
             ) : (
               <>
                 Biznesingizni Rivojlantiruvchi <br />
-                <span className="font-serif-italic text-amber-400 font-normal">Ijodiy & Yuqori Texnologik</span> Agentlik
+                <span className="font-serif-italic text-amber-500 dark:text-amber-400 font-normal">Ijodiy & Yuqori Texnologik</span> Agentlik
               </>
             )}
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-400 leading-relaxed mt-4">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mt-4">
             {lang === 'en'
               ? "At AS Digital, we merge strategic thinking, bold UI design, and production-grade full-stack engineering to build digital products that drive undeniable business momentum."
               : "AS Digital jamoasi strategik fikrlash, zamonaviy UI/UX dizayn va yuqori darajadagi dasturiy muhandislikni birlashtirib, biznesingizga sezilarli muvaffaqiyat olib keladigan raqamli mahsulotlarni yaratadi."}
@@ -127,26 +127,26 @@ export const MockupAboutSection: React.FC<MockupAboutSectionProps> = ({
               <div 
                 key={idx}
                 onMouseEnter={() => soundFx.playHover()}
-                className="bg-[#090D1C]/90 border border-slate-800/90 hover:border-amber-400/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 shadow-lg group relative overflow-hidden"
+                className="bg-slate-50 dark:bg-[#090D1C]/90 border border-slate-200 dark:border-slate-800/90 hover:border-amber-400/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 shadow-md dark:shadow-lg group relative overflow-hidden"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                  <div className="w-11 h-11 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-amber-500 dark:text-amber-400 group-hover:scale-110 transition-transform shadow-sm">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-[11px] font-mono text-slate-500">
+                  <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500">
                     0{idx + 1}
                   </span>
                 </div>
 
-                <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight group-hover:text-amber-300 transition-colors">
+                <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono tracking-tight group-hover:text-amber-500 dark:group-hover:text-amber-300 transition-colors">
                   {stat.value}
                 </div>
 
-                <div className="text-sm font-bold text-slate-200 mt-1">
+                <div className="text-sm font-bold text-slate-800 dark:text-slate-200 mt-1">
                   {stat.label}
                 </div>
 
-                <div className="text-xs text-slate-400 mt-0.5">
+                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                   {stat.subtext}
                 </div>
               </div>
@@ -155,22 +155,22 @@ export const MockupAboutSection: React.FC<MockupAboutSectionProps> = ({
         </div>
 
         {/* Deep Dive: Interactive Vision / Mission / Approach Tabs */}
-        <div className="bg-[#090D1A]/95 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+        <div className="bg-slate-50/90 dark:bg-[#090D1A]/95 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl dark:shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left side: Navigation pills & Handwritten note */}
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-2">
-                <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">
+                <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
                   {lang === 'en' ? "Core Principles" : "Asosiy Tamoyillarimiz"}
                 </span>
-                <h3 className="text-2xl font-bold text-white leading-snug">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-snug">
                   {lang === 'en' ? "How We Build Category Leaders" : "Bozor Yetakchilarini Qanday Yaratamiz"}
                 </h3>
               </div>
 
               {/* Segmented Control */}
-              <div className="flex flex-col gap-2 p-1.5 bg-[#060814] border border-slate-800 rounded-2xl">
+              <div className="flex flex-col gap-2 p-1.5 bg-white dark:bg-[#060814] border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm">
                 {[
                   { id: 'vision', label: lang === 'en' ? 'Our Vision' : 'Bizning Qarashimiz' },
                   { id: 'mission', label: lang === 'en' ? 'Our Mission' : 'Bizning Missiyamiz' },
@@ -185,7 +185,7 @@ export const MockupAboutSection: React.FC<MockupAboutSectionProps> = ({
                     className={`px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-left transition-all cursor-pointer flex items-center justify-between ${
                       activeTab === tab.id
                         ? 'bg-amber-400 text-slate-950 shadow-md font-extrabold'
-                        : 'text-slate-400 hover:text-white hover:bg-slate-900/60'
+                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900/60'
                     }`}
                   >
                     <span>{tab.label}</span>
@@ -196,34 +196,34 @@ export const MockupAboutSection: React.FC<MockupAboutSectionProps> = ({
 
               {/* Handwritten note */}
               <div className="pt-2 pl-2">
-                <div className="font-handwriting text-amber-300 text-2xl font-bold -rotate-3 inline-block">
+                <div className="font-handwriting text-amber-500 dark:text-amber-300 text-2xl font-bold -rotate-3 inline-block">
                   {lang === 'en' ? "Crafted with passion & precision →" : "Har bir detalda mehr va aniqlik →"}
                 </div>
               </div>
             </div>
 
             {/* Right side: Selected Tab Content */}
-            <div className="lg:col-span-7 bg-[#060814] border border-slate-800/90 rounded-2xl p-6 sm:p-8 space-y-5">
-              <div className="flex items-center gap-2 text-xs font-mono text-amber-400">
+            <div className="lg:col-span-7 bg-white dark:bg-[#060814] border border-slate-200 dark:border-slate-800/90 rounded-2xl p-6 sm:p-8 space-y-5 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-mono text-amber-500 dark:text-amber-400">
                 <Sparkles className="w-4 h-4" />
                 <span className="uppercase tracking-wider">
                   {activeTab.toUpperCase()}
                 </span>
               </div>
 
-              <h4 className="text-xl sm:text-2xl font-extrabold text-white">
+              <h4 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
                 {tabContent[activeTab].title}
               </h4>
 
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {tabContent[activeTab].desc}
               </p>
 
               {/* Key Checkpoints */}
-              <div className="space-y-2.5 pt-2 border-t border-slate-800/80">
+              <div className="space-y-2.5 pt-2 border-t border-slate-200 dark:border-slate-800/80">
                 {tabContent[activeTab].points.map((pt, i) => (
-                  <div key={i} className="flex items-center gap-3 text-xs sm:text-sm text-slate-300">
-                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
+                  <div key={i} className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-amber-500 dark:text-amber-400 shrink-0" />
                     <span>{pt}</span>
                   </div>
                 ))}
@@ -235,7 +235,7 @@ export const MockupAboutSection: React.FC<MockupAboutSectionProps> = ({
                     soundFx.playClick();
                     onContactClick();
                   }}
-                  className="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-bold text-white hover:text-amber-400 transition-colors flex items-center gap-2 cursor-pointer"
+                  className="px-5 py-2.5 rounded-full bg-slate-900 dark:bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-bold text-white hover:text-amber-400 transition-colors flex items-center gap-2 cursor-pointer shadow-md"
                 >
                   <span>{lang === 'en' ? "Discuss Your Vision" : "Loyiha Bo'yicha Maslahat Olish"}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
